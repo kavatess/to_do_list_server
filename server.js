@@ -22,15 +22,16 @@ const server = http.createServer(function (yeu_cau, phan_hoi) {
             return phan_hoi.end(taskData);
         };
 
-        // if (dinh_tuyen == '/fix_card') {
-        //     var du_lieu = JSON.parse(chuoi_nhan);
-        //     var new_card = du_lieu[0];
-        //     var index_thu = du_lieu[1];
-        //     var taskData = fileProcess.getJsonFile('./database/task/task.json');
-        //     danh_sach_lon[index_thu].thong_tin[index_card_fix] = new_card_fixed;
-        //     fileProcess.writeJsonFile('./database/task/task.json', taskData);
-        //     return phan_hoi.end(JSON.stringify(taskData));
-        // };
+        if (dinh_tuyen == '/fix_card') {
+            var du_lieu = JSON.parse(chuoi_nhan);
+            var new_card_fixed = du_lieu[0];
+            var index_thu = du_lieu[1];
+            var index_card_fix = du_lieu[2];
+            var taskData = fileProcess.getJsonFile('./database/task/task.json');
+            taskData[index_thu].thong_tin[index_card_fix] = new_card_fixed;
+            fileProcess.writeJsonFile('./database/task/task.json', taskData);
+            return phan_hoi.end(JSON.stringify(taskData));
+        };
 
         if (dinh_tuyen == '/add') {
             var du_lieu = JSON.parse(chuoi_nhan);
