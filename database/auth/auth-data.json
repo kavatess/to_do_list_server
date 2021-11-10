@@ -1,22 +1,18 @@
 [
     {
         "username": "hoan",
-        "password": "1234",
-        "token": "16299270-30e5-11ec-b9f9-37bac5c9c83d"
+        "password": "1234"
     },
     {
         "username": "dung",
-        "password": "1234",
-        "token": "16299270-30e5-11ec-b9f9-37bac5c9c83e"
+        "password": "1234"
     },
     {
         "username": "nguyen",
-        "password": "1234",
-        "token": "16299270-30e5-11ec-b9f9-37bac5c9c83f"
+        "password": "1234"
     },
     {
         "username": "duc",
-        "password": "1234",
-        "token": "16299270-30e5-11ec-b9f9-37bac5c9c840"
+        "password": "1234"
     }
 ]

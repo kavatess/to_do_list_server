@@ -1,7 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 const fileProcess = require('./file-process');
-const getUserByToken = require('./auth/checkToken');
 
 // Tạo một server bằng hàm createServer
 const server = http.createServer(function (yeu_cau, phan_hoi) {
@@ -19,11 +18,6 @@ const server = http.createServer(function (yeu_cau, phan_hoi) {
         // Cài đặt định tuyến
 
         if (dinh_tuyen == '/get-task') {
-            const { token } = JSON.parse(chuoi_nhan);
-            const userInfo = getUserByToken(token);
-            if (userInfo == null) {
-                return phan_hoi.end(new Error('Token không hợp lệ'));
-            }
             const taskData = fs.readFileSync('./database/task/task.json', 'utf-8');
             return phan_hoi.end(taskData);
         }
@@ -76,10 +70,10 @@ const server = http.createServer(function (yeu_cau, phan_hoi) {
             var authArray = fileProcess.getAuthData();
             var loginData = authArray.find(auth => auth.username == loginInfo.username);
             if (loginData != undefined && loginData.password == loginInfo.password) {
-                return phan_hoi.end(JSON.stringify({ token: loginData.token }));
+                return phan_hoi.end(JSON.stringify({ loginResult: true }));
             }
-            return phan_hoi.end(new Error('Đăng nhập thất bại.'));
-        }
+            return phan_hoi.end(JSON.stringify({ loginResult: false }));
+        };
     });
 });
 

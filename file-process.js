@@ -12,6 +12,10 @@ class FileProcess {
     writeJsonFile(path, data) {
         fs.writeFileSync(path, JSON.stringify(data), 'utf-8');
     }
+
+    a(){
+        console.log('aaaaaaaaaaaaaaa');
+    }
 }
 
 module.exports = new FileProcess();

@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nodemon": "^2.0.12",
-    "uuid": "^8.3.2"
+    "nodemon": "^2.0.12"
   }
 }
