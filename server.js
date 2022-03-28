@@ -27,7 +27,7 @@ const server = http.createServer(function (yeu_cau, phan_hoi) {
             const taskData = fs.readFileSync('./database/task/task.json', 'utf-8');
             return phan_hoi.end(taskData);
         }
-
+        // ĐCM anh Dũng
         if (dinh_tuyen == '/fix_card') {
             const { new_card_fixed, index_thu, index_card_fix } = JSON.parse(chuoi_nhan);
             const taskData = fileProcess.getJsonFile('./database/task/task.json');
